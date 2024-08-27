@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 5px; /* Добавляем промежутки между ячейками */
+  margin: 20px 0;
+}
+
+.today {
+  background-color: #c2eaff;
+}
+
+th, td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: #fff; /* Добавляем фон для ячеек */
+}
+
+th, .name {
+  background-color: #f4f4f4;
+  text-align: left; /* Выровнять по левому краю */
+}
+
+td:not(.name) {
+  text-align: right; /* Выровнять по правому краю */
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+span {
+  font-size: 0.9em;
+  margin-left: 20px; /* Добавляем расстояние между числом и процентами */
+}
+
+#data-table {
+  width: 100%;
+  border-collapse: separate; /* Используем separate для border-spacing */
+  border-spacing: 5px; /* Добавляем промежутки между ячейками */
+}
+
+#data-table th, #data-table td {
+  border: 1px solid #ddd;
+  padding: 8px 20px;
+}
+
+#data-table th {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.positive {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.negative {
+  background-color: #f8d7da;
+  color: #721c24;
+}

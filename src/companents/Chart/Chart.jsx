@@ -12,24 +12,30 @@ const Chart = ({ data, method }) => {
     console.log('Method:', method);
   }, [data, method]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (chartComponentRef.current) {
-        chartComponentRef.current.chart.reflow();
-      }
-    };
-
-    const resizeObserver = new ResizeObserver(handleResize);
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        resizeObserver.unobserve(containerRef.current);
-      }
-    };
-  }, []);
+	useEffect(() => {
+		const handleResize = () => {
+			if (chartComponentRef.current) {
+				const chart = chartComponentRef.current.chart;
+				const width = containerRef.current.clientWidth;
+				const height = containerRef.current.clientHeight;
+				setTimeout(() => {
+					chart.setSize(width, height, false);
+				}, 0);
+			}
+		};
+	
+		const resizeObserver = new ResizeObserver(handleResize);
+		const container = containerRef.current;
+		if (container) {
+			resizeObserver.observe(container);
+		}
+	
+		return () => {
+			if (container) {
+				resizeObserver.unobserve(container);
+			}
+		};
+	}, []);
 
   const options = {
     chart: {

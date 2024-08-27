@@ -1,5 +1,12 @@
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 20px; /* Добавляем отступы по полям */
 }
 
 table {
@@ -7,6 +14,7 @@ table {
   border-collapse: separate;
   border-spacing: 5px; /* Добавляем промежутки между ячейками */
   margin: 20px 0;
+  font-size: 1em; /* Базовый размер шрифта */
 }
 
 .today {
@@ -16,7 +24,7 @@ table {
 th, td {
   padding: 8px 12px;
   border: 1px solid #ddd;
-  background-color: #fff; /* Добавляем фон для ячеек */
+  background-color: #f4f4f4;; /* Добавляем фон для ячеек */
 }
 
 th, .name {
@@ -43,26 +51,85 @@ span {
 
 #data-table {
   width: 100%;
-  border-collapse: separate; /* Используем separate для border-spacing */
-  border-spacing: 5px; /* Добавляем промежутки между ячейками */
+  border-collapse: separate; /* Изменяем значение на separate */
+  border-spacing: 5px; /* Устанавливаем расстояние между ячейками */
 }
 
 #data-table th, #data-table td {
   border: 1px solid #ddd;
-  padding: 8px 20px;
+  padding: 8px;
 }
 
 #data-table th {
   background-color: #f2f2f2;
-  text-align: center;
+  text-align: left;
 }
 
-.positive {
-  background-color: #d4edda;
-  color: #155724;
+.number {
+  color: black; /* Черный цвет для чисел */
 }
 
-.negative {
-  background-color: #f8d7da;
-  color: #c11728;
+.percentage {
+  margin-left: 5px;
+}
+
+.change-cell.positive {
+  background-color: #d4edda; /* Зеленый фон для положительных процентов */
+}
+
+.change-cell.positive .percentage {
+  color: green; /* Зеленый цвет для положительных процентов */
+}
+
+.change-cell.negative {
+  background-color: #f8d7da; /* Красный фон для отрицательных процентов */
+}
+
+.change-cell.negative .percentage {
+  color: red; /* Красный цвет для отрицательных процентов */
+}
+
+.chart {
+  padding: 10px;
+}
+
+/* Адаптивные стили для уменьшения шрифта и отступов */
+@media (max-width: 1200px) {
+  table {
+    font-size: 0.9em;
+  }
+  th, td {
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  table {
+    font-size: 0.8em;
+  }
+  th, td {
+    padding: 5px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 0.7em;
+  }
+  th, td {
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  table {
+    font-size: 0.6em;
+  }
+  th, td {
+    padding: 3px 5px;
+  }
+}
+
+ td:hover {
+  cursor: pointer;
 }

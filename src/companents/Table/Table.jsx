@@ -14,8 +14,12 @@ const Table = () => {
     return ((today - yesterday) / yesterday) * 100;
   };
 
+  const formatNumber = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
+
   return (
-    <>
+    <div className="container">
       <table id="data-table">
         <thead>
           <tr>
@@ -39,11 +43,12 @@ const Table = () => {
               <React.Fragment key={index}>
                 <tr onClick={() => handleRowClick(index)}>
                   <td className="name">{row.method}</td>
-                  <td className="today">{row.today}</td>
-                  <td className={changeClass}>
-                    {row.lastWeek} <span>{Math.round(percentageChange)} %</span>
+                  <td className="today">{formatNumber(row.today)}</td>
+                  <td className={`change-cell ${changeClass}`}>
+                    <span className="number">{formatNumber(row.lastWeek)}</span>
+                    <span className="percentage">{Math.round(percentageChange)} %</span>
                   </td>
-                  <td>{row.thisMonth}</td>
+                  <td className="number">{formatNumber(row.thisMonth)}</td>
                 </tr>
                 {selectedRow === index && (
                   <tr>
@@ -59,7 +64,7 @@ const Table = () => {
           })}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

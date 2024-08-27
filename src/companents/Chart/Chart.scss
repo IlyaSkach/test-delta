@@ -1,0 +1,28 @@
+.chart-container {
+  width: 100%;
+  height: 100%; /* Адаптивная высота */
+  max-width: 100%;
+  margin: 0 auto; /* Центрируем график */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container > div {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 300px; /* Уменьшаем высоту для маленьких экранов */
+  }
+}
+
+@media (max-width: 576px) {
+  .chart-container {
+    height: 200px; /* Еще больше уменьшаем высоту для очень маленьких экранов */
+  }
+}

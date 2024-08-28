@@ -9,6 +9,19 @@ body {
   padding: 20px; /* Добавляем отступы по полям */
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.month-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 table {
   width: 100%;
   border-collapse: separate;
@@ -93,6 +106,8 @@ span {
   padding: 10px;
 }
 
+
+
 /* Адаптивные стили для уменьшения шрифта и отступов */
 @media (max-width: 1200px) {
   table {
@@ -132,4 +147,16 @@ span {
 
  td:hover {
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .change-cell {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .month-button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
 }
